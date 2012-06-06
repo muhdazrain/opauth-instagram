@@ -31,14 +31,17 @@ class InstagramStrategy extends OpauthStrategy {
 	 */
 	public function request(){
 		$url = 'https://api.instagram.com/oauth/authorize/';
+		
 		$params = array(
 			'client_id' => $this->strategy['client_id'],
 			'redirect_uri' => $this->strategy['redirect_uri'],
 			'response_type' => 'code'
 		);
 
-		if (!empty($this->strategy['scope'])) $params['scope'] = $this->strategy['scope'];
-		if (!empty($this->strategy['response_type'])) $params['response_type'] = $this->strategy['response_type'];
+		if (!empty($this->strategy['scope']))
+			$params['scope'] = $this->strategy['scope'];
+		if (!empty($this->strategy['response_type']))
+			$params['response_type'] = $this->strategy['response_type'];
 		
 		// redirect to generated url
 		// NOTE: have to decode url because Instagram display error page e.g. scope=likes+comments
@@ -51,6 +54,7 @@ class InstagramStrategy extends OpauthStrategy {
 	public function int_callback(){
 		if (array_key_exists('code', $_GET) && !empty($_GET['code'])){
 			$url = 'https://api.instagram.com/oauth/access_token';
+			
 			$params = array(
 				'client_id' =>$this->strategy['client_id'],
 				'client_secret' => $this->strategy['client_secret'],
