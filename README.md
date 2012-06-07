@@ -36,7 +36,8 @@ Required parameters:
 ```
 
 Optional parameters:
-`scope`, `response_type`
+`scope`, `response_type`  
+For `scope`, separate each scopes with a space(' ') and not a plus sign ('+'). Eg. `likes comments`.
 
 
 References
