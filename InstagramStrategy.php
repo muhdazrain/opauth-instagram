@@ -74,7 +74,7 @@ class InstagramStrategy extends OpauthStrategy {
 					'uid' => $userinfo->id,
 					'info' => array(
 						'name' => $userinfo->full_name,
-						'username' => $userinfo->username,
+						'nickname' => $userinfo->username,
 						'image' => $userinfo->profile_picture
 					),
 					'credentials' => array(
