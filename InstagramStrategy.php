@@ -44,8 +44,7 @@ class InstagramStrategy extends OpauthStrategy {
 			$params['response_type'] = $this->strategy['response_type'];
 		
 		// redirect to generated url
-		// NOTE: have to decode url because Instagram display error page e.g. scope=likes+comments
-		$this->redirect($url.'?'.urldecode(http_build_query($params, '', '&')));
+		$this->clientGet($url, $params);
 	}
 	
 	/**
