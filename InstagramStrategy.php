@@ -85,6 +85,7 @@ class InstagramStrategy extends OpauthStrategy {
 				);
 				
 				if (!empty($userinfo->website)) $this->auth['info']['urls']['website'] = $userinfo->website;
+				if (!empty($userinfo->bio)) $this->auth['info']['description'] = $userinfo->bio;
 				
 				/**
 				 * NOTE:
