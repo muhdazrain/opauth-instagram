@@ -17,7 +17,6 @@ Getting started
 2. Create a Instagram application at http://instagr.am/developer/clients/register/
    - Make sure that redirect URI is set to actual OAuth 2.0 callback URL, usually `http://path_to_opauth/instagram/int_callback`
 
-   
 3. Configure Opauth-Instagram strategy.
 
 4. Direct user to `http://path_to_opauth/instagram` to authenticate
