@@ -139,7 +139,11 @@ class InstagramStrategy extends OpauthStrategy {
 		$userinfo = $this->serverGet('https://api.instagram.com/v1/users/'.$uid.'/', array('access_token' => $access_token), null, $headers);
 		
 		if (!empty($userinfo)){
-			$results = json_decode($userinfo);
+			while (substr($userinfo, -1) != '}') {
+                $userinfo = substr($userinfo, 0, -1);
+            }
+
+            $results = json_decode($userinfo);
 			
 			return $results->data;
 		}
