@@ -140,10 +140,10 @@ class InstagramStrategy extends OpauthStrategy {
 		
 		if (!empty($userinfo)){
 			while (substr($userinfo, -1) != '}') {
-                $userinfo = substr($userinfo, 0, -1);
-            }
+				$userinfo = substr($userinfo, 0, -1);
+			}
 
-            $results = json_decode($userinfo);
+			$results = json_decode($userinfo);
 			
 			return $results->data;
 		}
