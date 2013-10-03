@@ -62,6 +62,10 @@ class InstagramStrategy extends OpauthStrategy {
 				'code' => trim($_GET['code'])
 			);
 			$response = $this->serverPost($url, $params, null, $headers);
+
+			while (substr($response, -1) != '}') {
+				$response = substr($response, 0, -1);
+			}
 			
 			$results = json_decode($response);
 			
