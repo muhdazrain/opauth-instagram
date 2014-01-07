@@ -42,6 +42,8 @@ class InstagramStrategy extends OpauthStrategy {
 			$params['scope'] = $this->strategy['scope'];
 		if (!empty($this->strategy['response_type']))
 			$params['response_type'] = $this->strategy['response_type'];
+		if (!empty($this->strategy['state']))
+			$params['state'] = $this->strategy['state'];
 		
 		// redirect to generated url
 		$this->clientGet($url, $params);
